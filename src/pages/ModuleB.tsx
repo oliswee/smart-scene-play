@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Gift, RotateCcw, Trophy, Database, Timer, MousePointerClick, HelpCircle, Award, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
+import AIInsightPanel from "@/components/atca/AIInsightPanel";
 
 type Stage = "split" | "preroll" | "question" | "reward" | "main";
 
@@ -78,6 +79,33 @@ export default function ModuleB() {
               { label: "答对发卡券", desc: "微信卡包即时到账", icon: Award },
               { label: "切入正片", desc: "跳过 60s 贴片" },
             ]}
+          />
+        </div>
+
+        {/* AI 内容理解层 · 模块 B 实时输出 */}
+        <div className="mb-6">
+          <AIInsightPanel
+            relevance={{
+              title: "剧中道具识别 → 题库匹配",
+              items: [
+                { label: "剧集", value: "庆余年 EP01" },
+                { label: "镜头道具", value: "项链特写", confidence: 0.91 },
+                { label: "品牌识别", value: "Cartier (款式比对)" },
+                { label: "用户画像", value: "互动倾向 · 高" },
+              ],
+            }}
+            moment={{
+              title: "正片开播前 · 零张力起点",
+              tension: 5,
+              verdict: "用户期待值高、剧情未开始 · 适合互动",
+              safe: true,
+            }}
+            format={{
+              title: "形式编排：互动 vs 贴片",
+              chosen: "5s 分屏倒计时 + 二选一答题 (CPE)",
+              reason: "用户互动倾向高 + 道具品牌匹配成功，触发 Time-Choice 形式",
+              alternatives: ["60s 强制贴片", "纯展示中插", "片尾贴片"],
+            }}
           />
         </div>
 
