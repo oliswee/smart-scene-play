@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingCart, Sparkles, X, Plus, Tag, Brain } from "lucide-react";
+import { ShoppingCart, Sparkles, X, Plus, Tag, Brain, PlayCircle, Film, Layers, MousePointerClick } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScenePositioning from "@/components/atca/ScenePositioning";
 
 const emotionTags = [
   { tag: "悬疑", weight: 0.82, color: "bg-purple-500" },
@@ -51,6 +52,26 @@ export default function ModuleA() {
           <span className="px-3 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-xs text-primary">
             场景：沉浸追剧
           </span>
+        </div>
+
+        {/* 场景定位 + 流程图 */}
+        <div className="mb-6">
+          <ScenePositioning
+            code="A"
+            title="AIGC 动态回顾广告"
+            strategy="Time-Convertible (A)"
+            scene="用户连续追剧，上集播完即将进入下一集的衔接时刻"
+            value={`把"广告等待时间"转化成"高情绪剧情回顾"，零黑屏切换 + 商品悬浮加购`}
+            accent="from-primary to-primary-glow"
+            flow={[
+              { label: "上集播完", desc: "Continuous Playback 命中", icon: PlayCircle },
+              { label: "AI 提取关键帧", desc: "情绪打标 / 品牌定向", icon: Brain },
+              { label: "AI 混剪 18s", desc: "替代传统贴片", icon: Film },
+              { label: "品牌护航浮层", desc: "顶部品牌名 + 角标", icon: Layers },
+              { label: "悬浮购物车", desc: "点击 → 半屏加购", icon: MousePointerClick },
+              { label: "无缝进下一集", desc: "零黑屏 / 零等待" },
+            ]}
+          />
         </div>
 
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">

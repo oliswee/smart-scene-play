@@ -74,9 +74,17 @@ export default function Dashboard() {
     <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-[1600px] px-4 lg:px-8 py-10">
         <div className="mb-8">
-          <p className="text-xs text-accent uppercase tracking-widest mb-2">KPI Dashboard</p>
+          <div className="flex items-center gap-3 mb-2">
+            <p className="text-xs text-accent uppercase tracking-widest">KPI Dashboard</p>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-accent/10 border border-accent/40 text-[10px] font-mono text-accent uppercase tracking-wider">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+              Demo Data · 模拟数据
+            </span>
+          </div>
           <h1 className="text-3xl lg:text-4xl font-bold">商业化数据看板</h1>
-          <p className="text-muted-foreground mt-2">防御指标 · 进攻指标 · 模块对比 · 全部为模拟数据</p>
+          <p className="text-muted-foreground mt-2">
+            防御指标 · 进攻指标 · 模块对比 · 当前数据为产品评审用模拟样本，上线后将由真实埋点替换
+          </p>
         </div>
 
         {/* KPI 卡片 */}
