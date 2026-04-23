@@ -51,7 +51,7 @@ export default function Documentation() {
                 icon={Eye}
                 title="痛点一: 广告与内容无关"
                 problem="用户正在看古装剧，却被迫观看汽车广告；看综艺时推送保险广告"
-                analysis="传统投放基于用户画像的粗粒度匹配，忽视了"当前内容上下文"的关联性"
+                analysis="传统投放基于用户画像的粗粒度匹配，忽视了「当前内容上下文」的关联性"
                 data="调研显示 67% 用户认为广告与正在观看的内容毫无关系"
               />
               <PainPointCard
@@ -76,8 +76,8 @@ export default function Documentation() {
                 核心洞察
               </h4>
               <p className="text-sm text-muted-foreground">
-                用户讨厌的不是"广告存在"本身，而是<strong className="text-foreground">广告与内容割裂、时机突兀、形式单一</strong>。
-                解决这三个问题，广告体验将从"被迫忍受"变成"可接受甚至有趣"。
+                用户讨厌的不是「广告存在」本身，而是<strong className="text-foreground">广告与内容割裂、时机突兀、形式单一</strong>。
+                解决这三个问题，广告体验将从「被迫忍受」变成「可接受甚至有趣」。
               </p>
             </div>
           </Section>
@@ -140,7 +140,7 @@ export default function Documentation() {
                     code="Content-Relevance"
                     title="内容相关性匹配"
                     desc="AI 实时解析当前剧集的类型、人物、道具、情绪标签，推荐与剧情同源的品牌/品类"
-                    example="用户看《庆余年》悬疑剧情 → AI识别"悬疑+古装+权谋" → 推荐茶饮、传统品牌广告"
+                    example="用户看《庆余年》悬疑剧情 → AI识别「悬疑+古装+权谋」 → 推荐茶饮、传统品牌广告"
                     solves="解决痛点一：广告与内容无关"
                   />
                   <AICapabilityCard
@@ -317,7 +317,7 @@ export default function Documentation() {
               <div className="space-y-3 text-sm">
                 <TradeoffItem
                   conflict="用户想完全免广告 vs 平台需要收入"
-                  resolution="提供"答题免广告"选项，用户主动参与换取权益，平台收取 CPE 费用"
+                  resolution="提供「答题免广告」选项，用户主动参与换取权益，平台收取 CPE 费用"
                 />
                 <TradeoffItem
                   conflict="广告主想最大曝光 vs 用户讨厌打扰"
@@ -377,9 +377,9 @@ export default function Documentation() {
                 steps={[
                   { step: "1", title: "上集播放完毕", desc: "系统检测到 Continuous Playback 模式" },
                   { step: "2", title: "AI 内容分析", desc: "提取上集关键帧，进行情绪打标，识别主要道具" },
-                  { step: "3", title: "品牌匹配", desc: "根据情绪标签匹配广告主（如"悬疑"→元气森林）" },
+                  { step: "3", title: "品牌匹配", desc: "根据情绪标签匹配广告主（如「悬疑」→元气森林）" },
                   { step: "4", title: "AI 混剪生成", desc: "生成 18 秒上集高能回顾视频" },
-                  { step: "5", title: "品牌护航浮层", desc: "顶部展示"本集由 XX 护航"提示" },
+                  { step: "5", title: "品牌护航浮层", desc: "顶部展示「本集由 XX 护航」提示" },
                   { step: "6", title: "悬浮购物车", desc: "右下角加购入口，点击打开半屏小程序" },
                   { step: "7", title: "无缝进下一集", desc: "零黑屏切换，追剧心流不中断" },
                 ]}
