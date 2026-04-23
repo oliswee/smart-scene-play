@@ -118,7 +118,7 @@ export default function AIContentLayer() {
             <span className="text-muted-foreground">→</span>
             <span className="px-2 py-1 rounded bg-primary/15 text-primary font-semibold">② 环境调度引擎</span>
             <span className="text-muted-foreground">→</span>
-            <span className="px-2 py-1 rounded bg-purple-500/15 text-purple-300 font-semibold">③ 模块 A/B/C 创意编排</span>
+            <span className="px-2 py-1 rounded bg-accent/10 text-accent font-semibold">③ 模块 A/B/C 创意编排</span>
             <span className="text-muted-foreground">→</span>
             <span className="px-2 py-1 rounded bg-foreground/10 font-semibold">④ 客户端下发</span>
           </div>
