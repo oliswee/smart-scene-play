@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Cast, Smartphone, Gift, Tv, Wifi, X, Sparkles, Cloud, BellRing, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
+import AIInsightPanel from "@/components/atca/AIInsightPanel";
 
 type Phase = "idle" | "connecting" | "playing" | "vpp";
 
@@ -76,6 +77,33 @@ export default function ModuleC() {
               { label: "小屏 In-App Banner", desc: "跨端同步推送", icon: BellRing },
               { label: "代金券核销", desc: "完成商业闭环", icon: Gift },
             ]}
+          />
+        </div>
+
+        {/* AI 内容理解层 · 模块 C 实时输出 */}
+        <div className="mb-6">
+          <AIInsightPanel
+            relevance={{
+              title: "投屏环境 + 内容场景识别",
+              items: [
+                { label: "环境", value: "客厅 / 投屏 / 外放" },
+                { label: "陪同观看", value: "推断 ≥2 人", confidence: 0.78 },
+                { label: "内容类型", value: "庆余年 · 长视频强情节" },
+                { label: "适配品牌", value: "元气森林 (饮品·客厅高频)" },
+              ],
+            }}
+            moment={{
+              title: "公共社交场景 · 任何贴片都打扰",
+              tension: 88,
+              verdict: "整集禁止显式广告 · 仅允许 VPP 自然植入",
+              safe: false,
+            }}
+            format={{
+              title: "大屏静默 + 小屏激活",
+              chosen: "VPP 虚拟物品(大屏) + In-App 代金券(小屏)",
+              reason: "大屏免打扰守住口碑，小屏跨端发券完成转化闭环",
+              alternatives: ["前贴片", "暂停广告", "中插互动"],
+            }}
           />
         </div>
 

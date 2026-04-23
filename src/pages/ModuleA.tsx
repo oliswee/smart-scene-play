@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Sparkles, X, Plus, Tag, Brain, PlayCircle, Film, Layers, MousePointerClick } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
+import AIInsightPanel from "@/components/atca/AIInsightPanel";
 
 const emotionTags = [
   { tag: "悬疑", weight: 0.82, color: "bg-purple-500" },
@@ -71,6 +72,33 @@ export default function ModuleA() {
               { label: "悬浮购物车", desc: "点击 → 半屏加购", icon: MousePointerClick },
               { label: "无缝进下一集", desc: "零黑屏 / 零等待" },
             ]}
+          />
+        </div>
+
+        {/* AI 内容理解层 · 模块 A 实时输出 */}
+        <div className="mb-6">
+          <AIInsightPanel
+            relevance={{
+              title: "上集内容识别 → 同源品牌",
+              items: [
+                { label: "剧集", value: "庆余年 EP05" },
+                { label: "主导情绪", value: "悬疑 / 热血", confidence: 0.82 },
+                { label: "高频道具", value: "茶具 · 长袍" },
+                { label: "匹配品牌", value: "元气森林 (情绪定向)" },
+              ],
+            }}
+            moment={{
+              title: "连播衔接 = 安全插入点",
+              tension: 12,
+              verdict: "上集已落幕，张力归零 · 可下发 AI 混剪",
+              safe: true,
+            }}
+            format={{
+              title: "替代 60s 贴片",
+              chosen: "AI 混剪回顾 18s + 品牌护航 + 悬浮购物车",
+              reason: "用户处于高情绪连播态，混剪保留情绪 + 浮层不打断观剧",
+              alternatives: ["60s 贴片", "中插广告", "暂停页广告"],
+            }}
           />
         </div>
 
