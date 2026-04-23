@@ -68,7 +68,7 @@ export default function ModuleB() {
             title="二选一互动竞价池"
             strategy="Time-Choice (B)"
             scene="非连播的单次视频点击，用户碎片化点播短中视频（< 45min）"
-            value="把"被动看 60s 贴片"变"主动答题免广告"，按互动 CPE 竞价 + 微信卡券即时闭环"
+            value={`把"被动看 60s 贴片"变"主动答题免广告"，按互动 CPE 竞价 + 微信卡券即时闭环`}
             accent="from-accent to-accent-glow"
             flow={[
               { label: "进入播放", desc: "命中 Time-Choice", icon: PlayCircle },

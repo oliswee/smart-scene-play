@@ -61,7 +61,7 @@ export default function ModuleA() {
             title="AIGC 动态回顾广告"
             strategy="Time-Convertible (A)"
             scene="用户连续追剧，上集播完即将进入下一集的衔接时刻"
-            value="把"广告等待时间"转化成"高情绪剧情回顾"，零黑屏切换 + 商品悬浮加购"
+            value={`把"广告等待时间"转化成"高情绪剧情回顾"，零黑屏切换 + 商品悬浮加购`}
             accent="from-primary to-primary-glow"
             flow={[
               { label: "上集播完", desc: "Continuous Playback 命中", icon: PlayCircle },
