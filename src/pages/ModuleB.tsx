@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, Gift, RotateCcw, Trophy, Database } from "lucide-react";
+import { CheckCircle2, Gift, RotateCcw, Trophy, Database, Timer, MousePointerClick, HelpCircle, Award, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScenePositioning from "@/components/atca/ScenePositioning";
 
 type Stage = "split" | "preroll" | "question" | "reward" | "main";
 
@@ -58,6 +59,26 @@ export default function ModuleB() {
           <Button variant="outline" size="sm" onClick={reset}>
             <RotateCcw className="h-3.5 w-3.5" /> 重新演示
           </Button>
+        </div>
+
+        {/* 场景定位 + 流程图 */}
+        <div className="mb-6">
+          <ScenePositioning
+            code="B"
+            title="二选一互动竞价池"
+            strategy="Time-Choice (B)"
+            scene="非连播的单次视频点击，用户碎片化点播短中视频（< 45min）"
+            value="把"被动看 60s 贴片"变"主动答题免广告"，按互动 CPE 竞价 + 微信卡券即时闭环"
+            accent="from-accent to-accent-glow"
+            flow={[
+              { label: "进入播放", desc: "命中 Time-Choice", icon: PlayCircle },
+              { label: "5s 分屏倒计时", desc: "左 30% 贴片 / 右 70% 答题", icon: Timer },
+              { label: "用户选择", desc: "默认走贴片 / 主动答题", icon: MousePointerClick },
+              { label: "弹出选择题", desc: "剧中道具品牌识别", icon: HelpCircle },
+              { label: "答对发卡券", desc: "微信卡包即时到账", icon: Award },
+              { label: "切入正片", desc: "跳过 60s 贴片" },
+            ]}
+          />
         </div>
 
         <div className="grid lg:grid-cols-[1fr_360px] gap-6">

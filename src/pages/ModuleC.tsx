@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Cast, Smartphone, Gift, Tv, Wifi, X } from "lucide-react";
+import { Cast, Smartphone, Gift, Tv, Wifi, X, Sparkles, Cloud, BellRing, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScenePositioning from "@/components/atca/ScenePositioning";
 
 type Phase = "idle" | "connecting" | "playing" | "vpp";
 
@@ -56,6 +57,26 @@ export default function ModuleC() {
             <Cast className="h-4 w-4" />
             {phase === "idle" ? "开始投屏" : "重置演示"}
           </Button>
+        </div>
+
+        {/* 场景定位 + 流程图 */}
+        <div className="mb-6">
+          <ScenePositioning
+            code="C"
+            title="跨端 VPP 静默植入"
+            strategy="Time-Invisible (C)"
+            scene="客厅观影 / 投屏 / 外放音量 > 50% 的公共社交场景"
+            value="大屏零贴片打扰保住体验，VPP 虚拟物品做品牌曝光，小屏同步发券完成转化"
+            accent="from-purple-500 to-pink-500"
+            flow={[
+              { label: "投屏检测", desc: "Casting=True 命中", icon: Cast },
+              { label: "云端拉取 VPP 流", desc: "已合成虚拟物品分片", icon: Cloud },
+              { label: "大屏秒播正片", desc: "无任何前贴片", icon: ShieldCheck },
+              { label: "VPP 虚拟物品曝光", desc: "正片中自然植入", icon: Sparkles },
+              { label: "小屏 In-App Banner", desc: "跨端同步推送", icon: BellRing },
+              { label: "代金券核销", desc: "完成商业闭环", icon: Gift },
+            ]}
+          />
         </div>
 
         <div className="grid lg:grid-cols-[1.6fr_1fr] gap-6 items-start">
