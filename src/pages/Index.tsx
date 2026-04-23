@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Film, Gamepad2, Tv, Sparkles, Zap, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RuleEngineFlow from "@/components/atca/RuleEngineFlow";
+import AIContentLayer from "@/components/atca/AIContentLayer";
 
 const modules = [
   {
@@ -100,6 +101,16 @@ export default function Index() {
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* AI 内容理解层 (V1.1 新增 - 解决相关性/时机/形式三大痛点) */}
+      <section className="mx-auto max-w-[1600px] px-4 lg:px-8 pt-16">
+        <div className="mb-8">
+          <p className="text-xs text-accent uppercase tracking-widest mb-2">AI Intelligence Layer</p>
+          <h2 className="text-3xl lg:text-4xl font-bold">AI 控制广告"内容 · 时机 · 形式"</h2>
+          <p className="text-muted-foreground mt-2">在调度引擎之上叠加内容感知能力，从根本上解决广告"无关 / 突兀 / 单一"的体验问题</p>
+        </div>
+        <AIContentLayer />
       </section>
 
       {/* 三大模块卡片 */}
