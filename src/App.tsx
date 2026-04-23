@@ -10,6 +10,8 @@ import ModuleA from "./pages/ModuleA.tsx";
 import ModuleB from "./pages/ModuleB.tsx";
 import ModuleC from "./pages/ModuleC.tsx";
 import Dashboard from "./pages/Dashboard.tsx";
+import Comparison from "./pages/Comparison.tsx";
+import Documentation from "./pages/Documentation.tsx";
 import TopNav from "./components/TopNav.tsx";
 
 const queryClient = new QueryClient();
@@ -23,6 +25,8 @@ const App = () => (
         <TopNav />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/comparison" element={<Comparison />} />
+          <Route path="/documentation" element={<Documentation />} />
           <Route path="/simulator" element={<Simulator />} />
           <Route path="/module-a" element={<ModuleA />} />
           <Route path="/module-b" element={<ModuleB />} />
