@@ -88,7 +88,7 @@ export default function ModuleB() {
             relevance={{
               title: "剧中道具识别 → 题库匹配",
               items: [
-                { label: "剧集", value: "庆余年 EP01" },
+                { label: "剧集", value: "三十而已 EP01" },
                 { label: "镜头道具", value: "项链特写", confidence: 0.91 },
                 { label: "品牌识别", value: "Cartier (款式比对)" },
                 { label: "用户画像", value: "互动倾向 · 高" },
@@ -276,7 +276,7 @@ export default function ModuleB() {
                     {/* 【素材占位 - 视频】模块B：剧集正片视频流 */}
                     <div className="text-center">
                       <p className="text-xs text-muted-foreground mb-2">正片播放中 · placeholder</p>
-                      <p className="text-2xl font-bold">▶ 庆余年 EP01</p>
+                      <p className="text-2xl font-bold">▶ 三十而已 EP01</p>
                       <p className="text-xs text-muted-foreground mt-2">替换为剧集正片视频</p>
                     </div>
                   </motion.div>
