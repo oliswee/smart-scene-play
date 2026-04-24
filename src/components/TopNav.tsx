@@ -1,13 +1,15 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { Activity, Cpu, Film, Gamepad2, Tv, BarChart3, Sparkles } from "lucide-react";
+import { Activity, Cpu, Film, Gamepad2, Tv, BarChart3, Sparkles, GitCompare, FileText } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { to: "/", label: "调度总览", icon: Cpu },
+  { to: "/comparison", label: "对比体验", icon: GitCompare, highlight: true },
+  { to: "/documentation", label: "方案说明", icon: FileText },
   { to: "/simulator", label: "场景模拟器", icon: Activity },
-  { to: "/module-a", label: "模块A · 回顾", icon: Film },
-  { to: "/module-b", label: "模块B · 互动", icon: Gamepad2 },
-  { to: "/module-c", label: "模块C · 跨端", icon: Tv },
+  { to: "/module-a", label: "模块A", icon: Film },
+  { to: "/module-b", label: "模块B", icon: Gamepad2 },
+  { to: "/module-c", label: "模块C", icon: Tv },
   { to: "/dashboard", label: "数据看板", icon: BarChart3 },
 ];
 

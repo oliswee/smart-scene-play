@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Film, Gamepad2, Tv, Sparkles, Zap, BarChart3 } from "lucide-react";
+import { ArrowRight, Film, Gamepad2, Tv, Sparkles, Zap, BarChart3, GitCompare, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RuleEngineFlow from "@/components/atca/RuleEngineFlow";
 import AIContentLayer from "@/components/atca/AIContentLayer";
@@ -71,17 +71,23 @@ export default function Index() {
               将传统贴片转化为<strong className="text-foreground">可互动 / 可转化 / 不打扰</strong>的下一代视频广告体验。
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 shadow-glow">
-                <Link to="/simulator">
-                  <Zap className="h-4 w-4" />
-                  体验场景模拟器
+              <Button asChild size="lg" className="bg-gradient-accent hover:opacity-90 shadow-accent-glow">
+                <Link to="/comparison">
+                  <GitCompare className="h-4 w-4" />
+                  改造前后对比
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
+              <Button asChild size="lg" className="bg-gradient-primary hover:opacity-90 shadow-glow">
+                <Link to="/documentation">
+                  <FileText className="h-4 w-4" />
+                  方案说明文档
+                </Link>
+              </Button>
               <Button asChild size="lg" variant="outline">
-                <Link to="/dashboard">
-                  <BarChart3 className="h-4 w-4" />
-                  查看 KPI 看板
+                <Link to="/simulator">
+                  <Zap className="h-4 w-4" />
+                  场景模拟器
                 </Link>
               </Button>
             </div>
@@ -101,6 +107,33 @@ export default function Index() {
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* 改造前后对比快速入口 */}
+      <section className="mx-auto max-w-[1600px] px-4 lg:px-8 pt-16">
+        <Link
+          to="/comparison"
+          className="group block rounded-2xl border-2 border-accent/40 bg-gradient-to-br from-accent/10 via-primary/5 to-accent/10 p-6 lg:p-8 hover:border-accent transition-all hover:shadow-accent-glow"
+        >
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-4">
+              <div className="h-14 w-14 rounded-xl bg-accent/20 border border-accent/40 flex items-center justify-center">
+                <GitCompare className="h-7 w-7 text-accent" />
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-accent mb-1">Before vs After Demo</p>
+                <h3 className="text-2xl font-bold">改造前后对比体验</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  亲身感受传统贴片广告与 ATCA 智能广告的体验差异
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 text-accent group-hover:gap-3 transition-all">
+              <span className="text-sm font-medium">立即体验</span>
+              <ArrowRight className="h-5 w-5" />
+            </div>
+          </div>
+        </Link>
       </section>
 
       {/* AI 内容理解层 (V1.1 新增 - 解决相关性/时机/形式三大痛点) */}
