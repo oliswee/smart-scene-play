@@ -4,6 +4,7 @@ import { CheckCircle2, Gift, RotateCcw, Trophy, Database, Timer, MousePointerCli
 import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
 import AIInsightPanel from "@/components/atca/AIInsightPanel";
+import necklaceImg from "@/assets/b-necklace.png";
 
 type Stage = "split" | "preroll" | "question" | "reward" | "main";
 
@@ -198,9 +199,8 @@ export default function ModuleB() {
                         <span className="text-xs text-muted-foreground">来自 Cartier · 答对赢免广告 + 卡券</span>
                       </div>
                       <h2 className="text-2xl font-bold mb-6">剧中女主在第 3 集佩戴的项链是哪个品牌？</h2>
-                      <div className="h-32 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-700/20 border border-border flex items-center justify-center mb-6">
-                        {/* 【素材占位 - 图片】模块B：选择题中的道具图（项链特写），建议 800x300 */}
-                        <p className="text-xs text-muted-foreground">道具图占位 · 项链特写</p>
+                      <div className="h-40 rounded-xl border border-border overflow-hidden mb-6 bg-card">
+                        <img src={necklaceImg} alt="剧中项链特写" className="w-full h-full object-cover" />
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         {["Tiffany", "Cartier", "Bvlgari", "Chanel"].map((opt) => {

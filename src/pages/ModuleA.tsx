@@ -4,6 +4,7 @@ import { ShoppingCart, Sparkles, X, Plus, Tag, Brain, PlayCircle, Film, Layers, 
 import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
 import AIInsightPanel from "@/components/atca/AIInsightPanel";
+import yuanqiImg from "@/assets/a-yuanqi.png";
 
 const emotionTags = [
   { tag: "悬疑", weight: 0.82, color: "bg-purple-500" },
@@ -139,8 +140,7 @@ export default function ModuleA() {
                 className="absolute bottom-16 right-4 h-16 w-16 rounded-full bg-gradient-accent shadow-accent-glow flex items-center justify-center group"
               >
                 <span className="absolute inset-0 rounded-full bg-accent animate-ripple" />
-                <ShoppingCart className="h-6 w-6 text-accent-foreground relative" />
-                {/* 【素材占位 - 图片】模块A：商品微缩图，PNG 透明背景，建议 200x200 */}
+                <img src={yuanqiImg} alt="元气森林" className="h-10 w-10 object-contain relative" />
                 <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-background border-2 border-accent text-[10px] flex items-center justify-center font-bold">
                   1
                 </span>
@@ -234,13 +234,8 @@ export default function ModuleA() {
                   </button>
                 </div>
                 <div className="flex gap-4">
-                  <div className="h-32 w-32 rounded-xl bg-gradient-to-br from-pink-500/30 to-accent/30 flex items-center justify-center shrink-0">
-                    {/* 【素材占位 - 图片】模块A：商品主图，建议 400x400 PNG */}
-                    <span className="text-xs text-muted-foreground text-center px-2">
-                      商品主图
-                      <br />
-                      placeholder
-                    </span>
+                  <div className="h-32 w-32 rounded-xl bg-gradient-to-br from-pink-500/20 to-accent/20 flex items-center justify-center shrink-0 overflow-hidden">
+                    <img src={yuanqiImg} alt="元气森林白桃味气泡水" className="h-full w-full object-contain" />
                   </div>
                   <div className="flex-1">
                     <p className="text-2xl font-bold text-accent mb-1">¥5.9</p>
