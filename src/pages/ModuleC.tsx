@@ -89,7 +89,7 @@ export default function ModuleC() {
                 { label: "环境", value: "客厅 / 投屏 / 外放" },
                 { label: "陪同观看", value: "推断 ≥2 人", confidence: 0.78 },
                 { label: "内容类型", value: "庆余年 · 长视频强情节" },
-                { label: "适配品牌", value: "元气森林 (饮品·客厅高频)" },
+                { label: "适配品牌", value: "农夫山泉 (饮品·客厅高频)" },
               ],
             }}
             moment={{
@@ -153,7 +153,7 @@ export default function ModuleC() {
                             <div className="h-16 w-10 rounded bg-gradient-to-b from-accent to-accent-glow shadow-accent-glow" />
                             <span className="absolute inset-0 rounded animate-ripple bg-accent/40" />
                             <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-accent text-accent-foreground text-[10px] whitespace-nowrap">
-                              VPP · 元气森林
+                              VPP · 农夫山泉
                             </div>
                           </div>
                         </motion.div>
@@ -169,7 +169,7 @@ export default function ModuleC() {
                           exit={{ opacity: 0 }}
                           className="absolute bottom-4 right-4 px-3 py-1.5 rounded-md bg-background/70 backdrop-blur-md text-xs"
                         >
-                          本集无贴片打扰，由 <span className="text-accent">元气森林</span> 邀您沉浸观影
+                          本集无贴片打扰，由 <span className="text-accent">农夫山泉</span> 邀您沉浸观影
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -251,7 +251,7 @@ export default function ModuleC() {
                         </div>
                         <div className="flex-1 text-white">
                           <p className="text-[11px] font-semibold">大屏免打扰已生效！</p>
-                          <p className="text-[10px] opacity-90">元气森林赠您 ¥50 代金券</p>
+                          <p className="text-[10px] opacity-90">农夫山泉赠您 ¥50 代金券</p>
                         </div>
                         <button className="px-2 py-1 rounded-md bg-white text-accent text-[10px] font-bold">
                           领取
