@@ -4,6 +4,8 @@ import { Cast, Smartphone, Gift, Tv, Wifi, X, Sparkles, Cloud, BellRing, ShieldC
 import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
 import AIInsightPanel from "@/components/atca/AIInsightPanel";
+import vppSceneImg from "@/assets/c-vpp-scene.png";
+import showPosterImg from "@/assets/c-show-poster.png";
 
 type Phase = "idle" | "connecting" | "playing" | "vpp";
 
@@ -131,34 +133,15 @@ export default function ModuleC() {
 
                 {(phase === "playing" || phase === "vpp") && (
                   <>
-                    {/* 【素材占位 - 视频】模块C：含 VPP 合成的正片视频流分片 */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-amber-900/30 via-slate-900 to-slate-950" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <p className="text-xs text-muted-foreground/70">
-                        【正片视频流 · 含 VPP 合成分片 · placeholder】
-                      </p>
+                    {/* 替代视频：AI 生成的含 VPP 合成场景图（农夫山泉酒旗自然植入） */}
+                    <img
+                      src={vppSceneImg}
+                      alt="正片场景 · AI 合成农夫山泉 VPP 植入"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 right-3 px-2 py-0.5 rounded bg-background/60 text-[10px] text-muted-foreground">
+                      AI 虚拟生成 · VPP 合成分片
                     </div>
-
-                    {/* VPP 虚拟物品高亮（桌上的饮料） */}
-                    <AnimatePresence>
-                      {vppPulse && (
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.5 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0 }}
-                          className="absolute bottom-[28%] right-[22%]"
-                        >
-                          {/* 【素材占位 - 图片】模块C：VPP 虚拟物品（饮料瓶）PNG，建议 200x300 */}
-                          <div className="relative">
-                            <div className="h-16 w-10 rounded bg-gradient-to-b from-accent to-accent-glow shadow-accent-glow" />
-                            <span className="absolute inset-0 rounded animate-ripple bg-accent/40" />
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-accent text-accent-foreground text-[10px] whitespace-nowrap">
-                              VPP · 农夫山泉
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
 
                     {/* 右下小字提示 */}
                     <AnimatePresence>
@@ -219,8 +202,8 @@ export default function ModuleC() {
 
                   {/* 节目卡片 */}
                   <div className="rounded-xl bg-card border border-border/40 overflow-hidden">
-                    <div className="aspect-video bg-gradient-to-br from-amber-700/40 to-purple-900/40 flex items-center justify-center text-[10px] text-muted-foreground">
-                      节目封面 placeholder
+                    <div className="aspect-video overflow-hidden">
+                      <img src={showPosterImg} alt="庆余年 第二季" className="w-full h-full object-cover" />
                     </div>
                     <div className="p-2">
                       <p className="text-xs font-medium">庆余年 第二季</p>
