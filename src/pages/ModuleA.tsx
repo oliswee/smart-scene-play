@@ -118,18 +118,6 @@ export default function ModuleA() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* 顶部品牌护航浮层 */}
-              <motion.div
-                initial={{ y: -50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                className="absolute top-4 left-4 right-4 flex items-center gap-2 px-4 py-2 rounded-lg bg-background/70 backdrop-blur-md border border-primary/30"
-              >
-                <Sparkles className="h-3.5 w-3.5 text-primary" />
-                <span className="text-xs">
-                  上集高能回顾，本集由 <strong className="text-primary">元气森林</strong> 为您护航
-                </span>
-              </motion.div>
-
               {/* 右下悬浮购物车 */}
               <motion.button
                 onClick={() => setShowCart(true)}
@@ -138,18 +126,7 @@ export default function ModuleA() {
               >
                 <span className="absolute inset-0 rounded-full bg-accent animate-ripple" />
                 <img src={yuanqiImg} alt="元气森林" className="h-10 w-10 object-contain relative" />
-                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-background border-2 border-accent text-[10px] flex items-center justify-center font-bold">
-                  1
-                </span>
               </motion.button>
-
-              {/* 进度条 */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-background/40">
-                <div className="h-full bg-primary" style={{ width: `${progress}%` }} />
-              </div>
-              <div className="absolute bottom-3 left-4 text-xs text-foreground/80 font-mono">
-                EP05 → EP06 · 0:{String(Math.floor((progress / 100) * 18)).padStart(2, "0")} / 0:18
-              </div>
             </div>
 
             <div className="p-4 border-t border-border/60 flex items-center justify-between text-xs">
