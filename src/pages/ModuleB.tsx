@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
 import AIInsightPanel from "@/components/atca/AIInsightPanel";
 import necklaceImg from "@/assets/b-necklace.png";
+import advertVideo from "@/assets/b-advert.mp4";
+import seriesVideo from "@/assets/b-series.mp4";
 
 type Stage = "split" | "preroll" | "question" | "reward" | "main";
 
@@ -114,8 +116,13 @@ export default function ModuleB() {
           {/* 播放器主舞台 */}
           <div className="rounded-2xl overflow-hidden border border-border bg-card shadow-elegant">
             <div className="relative aspect-video bg-black">
-              {/* 【素材占位 - 视频】模块B：剧集正片首帧，作为底图 */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950/40 to-black" />
+              {/* 模块B：剧集正片首帧静音底图 */}
+              <video
+                src={seriesVideo}
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-60"
+              />
 
               <AnimatePresence mode="wait">
                 {stage === "split" && (
@@ -171,17 +178,28 @@ export default function ModuleB() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-900 to-slate-950"
+                    className="absolute inset-0 bg-black"
                   >
-                    {/* 【素材占位 - 视频】模块B：60s 标准贴片广告 */}
-                    <div className="text-center">
-                      <p className="text-xs text-muted-foreground mb-3">默认贴片 · placeholder</p>
-                      <p className="text-2xl font-bold mb-2">60s 品牌贴片广告</p>
-                      <p className="text-xs text-muted-foreground">将广告视频物料插入此位置</p>
-                      <Button variant="outline" size="sm" className="mt-6" onClick={() => setStage("main")}>
-                        跳过
-                      </Button>
+                    {/* 模块B：60s 标准贴片广告 */}
+                    <video
+                      src={advertVideo}
+                      autoPlay
+                      muted
+                      playsInline
+                      onEnded={() => setStage("main")}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-background/70 text-[10px] text-muted-foreground">
+                      默认贴片广告
                     </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="absolute bottom-4 right-4 bg-background/70 backdrop-blur"
+                      onClick={() => setStage("main")}
+                    >
+                      跳过
+                    </Button>
                   </motion.div>
                 )}
 
@@ -273,11 +291,17 @@ export default function ModuleB() {
                     animate={{ opacity: 1 }}
                     className="absolute inset-0 flex items-center justify-center bg-black"
                   >
-                    {/* 【素材占位 - 视频】模块B：剧集正片视频流 */}
-                    <div className="text-center">
-                      <p className="text-xs text-muted-foreground mb-2">正片播放中 · placeholder</p>
-                      <p className="text-2xl font-bold">▶ 三十而已 EP01</p>
-                      <p className="text-xs text-muted-foreground mt-2">替换为剧集正片视频</p>
+                    {/* 模块B：剧集正片视频流 */}
+                    <video
+                      src={seriesVideo}
+                      autoPlay
+                      loop
+                      playsInline
+                      controls
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute top-3 left-3 px-2 py-1 rounded bg-background/70 text-[10px] text-foreground">
+                      ▶ 三十而已 EP01
                     </div>
                   </motion.div>
                 )}
