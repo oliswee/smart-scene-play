@@ -118,6 +118,18 @@ export default function ModuleA() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
+              {/* 顶部品牌护航浮层 */}
+              <motion.div
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className="absolute top-4 left-4 right-4 flex items-center gap-2 px-4 py-2 rounded-lg bg-background/70 backdrop-blur-md border border-primary/30 pointer-events-none z-10"
+              >
+                <Sparkles className="h-3.5 w-3.5 text-primary" />
+                <span className="text-xs">
+                  上集高能回顾，本集由 <strong className="text-primary">元气森林</strong> 为您护航
+                </span>
+              </motion.div>
+
               {/* 右下悬浮购物车 */}
               <motion.button
                 onClick={() => setShowCart(true)}
@@ -130,7 +142,7 @@ export default function ModuleA() {
             </div>
 
             <div className="p-4 border-t border-border/60 flex items-center justify-between text-xs">
-              <span className="text-muted-foreground">下一集即将开始 · 无缝转场</span>
+              <span className="text-muted-foreground">AI 混剪回顾 + 品牌护航贴片 · 下一集无缝转场</span>
               <span className="text-primary font-mono">Time-Convertible Strategy</span>
             </div>
           </div>
