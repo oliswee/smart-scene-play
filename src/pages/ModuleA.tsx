@@ -113,8 +113,8 @@ export default function ModuleA() {
                 src={aiRecapVideo}
                 autoPlay
                 loop
-                muted
                 playsInline
+                controls
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
