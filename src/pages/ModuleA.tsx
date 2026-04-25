@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import ScenePositioning from "@/components/atca/ScenePositioning";
 import AIInsightPanel from "@/components/atca/AIInsightPanel";
 import yuanqiImg from "@/assets/a-yuanqi.png";
+import aiRecapVideo from "@/assets/a-ai-recap.mp4";
 
 const emotionTags = [
   { tag: "悬疑", weight: 0.82, color: "bg-purple-500" },
@@ -107,19 +108,15 @@ export default function ModuleA() {
           {/* 播放器 */}
           <div className="rounded-2xl overflow-hidden border border-border bg-card shadow-elegant">
             <div className="relative aspect-video bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900">
-              {/* 【素材占位 - 视频】模块A：上集 AI 混剪回顾视频，时长 15-20s，建议剧集高能片段 */}
-              {/* placeholder：渐变 + 模拟播放进度 */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <Sparkles className="h-12 w-12 text-primary/40 mx-auto mb-3 animate-pulse" />
-                  <p className="text-sm text-muted-foreground">
-                    【AI 混剪上集回顾视频 · 18s】
-                  </p>
-                  <p className="text-xs text-muted-foreground/60 mt-1">
-                    placeholder · 替换为真实剧集高能片段
-                  </p>
-                </div>
-              </div>
+              {/* 模块A：上集 AI 混剪回顾视频 */}
+              <video
+                src={aiRecapVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
               {/* 顶部品牌护航浮层 */}
               <motion.div
