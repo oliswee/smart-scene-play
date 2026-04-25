@@ -51,43 +51,43 @@ export default function Comparison() {
         </div>
 
         {/* 对比演示 Tabs */}
-        <Tabs defaultValue="碎片点播" className="w-full">
+        <Tabs defaultValue="连续追剧" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-6">
-            <TabsTrigger value="碎片点播">场景1: 碎片点播</TabsTrigger>
-            <TabsTrigger value="连续追剧">场景2: 连续追剧</TabsTrigger>
-            <TabsTrigger value="客厅投屏">场景3: 客厅投屏</TabsTrigger>
+            <TabsTrigger value="连续追剧">场景1 · 模块A: 连续追剧</TabsTrigger>
+            <TabsTrigger value="碎片点播">场景2 · 模块B: 碎片点播</TabsTrigger>
+            <TabsTrigger value="客厅投屏">场景3 · 模块C: 客厅投屏</TabsTrigger>
           </TabsList>
-
-          <TabsContent value="碎片点播">
-            <ScenarioComparison
-              scenario="碎片点播场景"
-              desc="用户随机点击一个短视频/综艺片段观看"
-              LegacyDemo={LegacyPrerollDemo}
-              ATCADemo={ATCAChoiceDemo}
-              legacyLabel="传统: 60秒强制贴片"
-              atcaLabel="ATCA: 二选一互动竞价 (模块B)"
-            />
-          </TabsContent>
 
           <TabsContent value="连续追剧">
             <ScenarioComparison
-              scenario="连续追剧场景"
-              desc="用户连续观看多集剧集，沉浸式追剧"
+              scenario="场景1: 连续追剧 (对应模块A · AIGC 动态回顾)"
+              desc="用户连续追剧 EP05 → EP06，传统体验需重看 60s 贴片，ATCA 用 AI 混剪上集高潮 + 品牌护航无缝衔接"
               LegacyDemo={LegacySeriesDemo}
               ATCADemo={ATCARecapDemo}
-              legacyLabel="传统: 每集前60秒贴片"
-              atcaLabel="ATCA: AI混剪回顾 (模块A)"
+              legacyLabel="传统: 每集前 60s 强制贴片"
+              atcaLabel="ATCA: AI 混剪回顾 + 品牌护航 (模块A)"
+            />
+          </TabsContent>
+
+          <TabsContent value="碎片点播">
+            <ScenarioComparison
+              scenario="场景2: 碎片点播 (对应模块B · 二选一互动竞价)"
+              desc="用户随机点击短视频/综艺片段，传统贴片强制 60s 无关广告，ATCA 用 5s 分屏让用户主动选择互动答题免广告"
+              LegacyDemo={LegacyPrerollDemo}
+              ATCADemo={ATCAChoiceDemo}
+              legacyLabel="传统: 60s 强制贴片不可跳过"
+              atcaLabel="ATCA: 二选一互动竞价 + 卡券核销 (模块B)"
             />
           </TabsContent>
 
           <TabsContent value="客厅投屏">
             <ScenarioComparison
-              scenario="客厅投屏场景"
-              desc="家庭客厅投屏观影，多人共同观看"
+              scenario="场景3: 客厅投屏 (对应模块C · 跨端 VPP 静默植入)"
+              desc="家庭客厅多人投屏观影，传统大屏贴片极度尴尬，ATCA 大屏免打扰只做 VPP 虚拟物品植入，券码静默推送至小屏"
               LegacyDemo={LegacyTVDemo}
               ATCADemo={ATCAVPPDemo}
-              legacyLabel="传统: 大屏贴片尴尬"
-              atcaLabel="ATCA: VPP静默植入 (模块C)"
+              legacyLabel="传统: 大屏 60s 贴片，全家尴尬"
+              atcaLabel="ATCA: 大屏 VPP 植入 + 小屏卡券 (模块C)"
             />
           </TabsContent>
         </Tabs>
